@@ -1,0 +1,11 @@
+footer {
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+background-color:#7f7e7e;
+height: 8vh;
+color: rgb(0, 0, 0);
+}
+p {
+  font-size: 30px;
+}

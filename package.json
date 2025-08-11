@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "tw-elements": "^2.0.0"
+  },
+  "name": "exam-angular",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VasilP25/Exam-Angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VasilP25/Exam-Angular/issues"
+  },
+  "homepage": "https://github.com/VasilP25/Exam-Angular#readme",
+  "description": ""
+}

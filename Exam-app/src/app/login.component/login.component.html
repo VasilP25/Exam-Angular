@@ -1,0 +1,36 @@
+<div class="centering">
+  <div class="main">
+    <h1>Login</h1>
+
+    <form action="">
+      <label for="username"> Username: </label>
+      <input
+        type="text"
+        id="first"
+        name="username"
+        placeholder="Enter your Username"
+        required
+      />
+
+      <label for="password"> Password: </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your Password"
+        required
+      />
+
+      <div class="wrap">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <p>
+      Not registered?
+      <a routerLink="/register" style="text-decoration: none">
+        Create an account
+      </a>
+    </p>
+  </div>
+</div>

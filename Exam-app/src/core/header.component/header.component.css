@@ -28,16 +28,17 @@
 .navigation-links li {
   color: #000000;
   display: inline-block;
-  padding: 10px 40px;
+  padding: 10px 30px;
   border-radius: 20px;
   transition: all .3s;
   background-color: #959494;
   margin-right: 20px;
+  font-size: 20px;
 }
 
 .navigation-links li:hover {
   background-color: rgb(109, 109, 109);
-  color: #fff;
+  color: #c8d20f;
   cursor: pointer;
 }
 

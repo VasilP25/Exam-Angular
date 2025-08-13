@@ -1,0 +1,8 @@
+a {
+  color: inherit;       /* да ползва цвета от бутона/родителя */
+  text-decoration: none; /* маха подчертаването */
+}
+a:hover {
+  color: #c8d20f;
+  cursor: pointer;
+}

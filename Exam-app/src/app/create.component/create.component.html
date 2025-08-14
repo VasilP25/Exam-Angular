@@ -1,0 +1,40 @@
+<div class="centering">
+  <form action="action_page.php">
+    <div class="container">
+      <h1>Create training</h1>
+      <hr />
+
+      <label for="title"><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="title" required />
+
+      <label for="type"><b>Type</b></label>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        name="type"
+        id="type"
+        required
+      />
+
+      <label for="description"><b>Description</b></label>
+      <textarea
+        type="text"
+        placeholder="Enter Description"
+        name="description"
+        id="description"
+        required
+      ></textarea>
+
+      <label for="time"><b>Time to complete[min]</b></label>
+      <input
+        type="number"
+        placeholder="Time to complete"
+        name="time"
+        id="ptime"
+        required
+      />
+      <hr />
+      <button type="submit" class="registerbtn">Create</button>
+    </div>
+  </form>
+</div>

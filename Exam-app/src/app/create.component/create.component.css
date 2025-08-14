@@ -14,7 +14,7 @@
 }
 
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -23,7 +23,7 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -77,10 +77,21 @@ hr {
 
 }
 .registerbtn:hover {
-    background-color: rgb(109, 109, 109);
-  color: #c8d20f;
+    background-color: #c8d20f;
+  color: black;
   cursor: pointer;
 }
 
-
+textarea {
+    width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+textarea:focus {
+    background-color: #ddd;
+  outline: none;
+}
 

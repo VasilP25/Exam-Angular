@@ -3,6 +3,9 @@ a {
   text-decoration: none; /* маха подчертаването */
 }
 a:hover {
-  color: #c8d20f;
+  color: #000000;
   cursor: pointer;
+}
+a.active{
+  color: #000000; 
 }

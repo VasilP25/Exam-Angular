@@ -37,8 +37,8 @@
 }
 
 .navigation-links li:hover {
-  background-color: rgb(109, 109, 109);
-  color: #c8d20f;
+  background-color: #c8d20f;
+  color: #000000;
   cursor: pointer;
 }
 

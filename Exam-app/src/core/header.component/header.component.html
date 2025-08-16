@@ -4,29 +4,34 @@
       <p class="title">Training Center</p>
       <ul class="navigation-links">
         <li>
-          <a>Home</a>
+          <a routerLink="/">Home</a>
         </li>
         <li>
-          <a>My trainigs</a>
+          <a>Search</a>
+        </li>
+        @if (isLoggedin) {
+        <li>
+          <a routerLink="/mytrainings">My trainigs</a>
         </li>
         <li>
           <a routerLink="/create">Create training</a>
         </li>
         <li>
-          <a>For you</a>
+          <a routerLink="/catalog">Catalog</a>
         </li>
         <li>
-          <a>Search</a>
+          <a (click)="logout()">Logout</a>
         </li>
+        }@else {
         <li>
           <a routerLink="/login">Login</a>
         </li>
         <li>
           <a routerLink="/register">Register</a>
         </li>
-        <li>
-          <a>Logout</a>
-        </li>
+
+        }
+
         <li>
           <a>About</a>
         </li>

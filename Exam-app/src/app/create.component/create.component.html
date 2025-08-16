@@ -1,20 +1,32 @@
 <div class="centering">
-  <form action="action_page.php">
+  <form #form="ngForm" (ngSubmit)="create(form)">
     <div class="container">
       <h1>Create training</h1>
       <hr />
 
       <label for="title"><b>Title</b></label>
-      <input type="text" placeholder="Enter Title" name="title" required />
-
-      <label for="type"><b>Type</b></label>
       <input
         type="text"
-        placeholder="Enter Username"
-        name="type"
+        placeholder="Enter Title"
+        name="title"
+        required
+        ngModel
+        #inputTitle="ngModel"
+      />
+
+      <label for="type"><b>Type</b></label>
+      <select
+        name="typeTraining"
         id="type"
         required
-      />
+        ngModel
+        #inputtype="ngModel"
+        required
+      >
+        <option value=""></option>
+        <option value="cardio">Cardio</option>
+        <option value="strength">Strength</option>
+      </select>
 
       <label for="description"><b>Description</b></label>
       <textarea
@@ -23,15 +35,19 @@
         name="description"
         id="description"
         required
+        ngModel
+        #inputDescription="ngModel"
       ></textarea>
 
-      <label for="time"><b>Time to complete[min]</b></label>
+      <label for="timeToComplete"><b>Time to complete[min]</b></label>
       <input
         type="number"
         placeholder="Time to complete"
-        name="time"
-        id="ptime"
+        name="timeToComplete"
+        id="timeToComplete"
         required
+        ngModel
+        #inputTimeToComplete="ngModel"
       />
       <hr />
       <button type="submit" class="registerbtn">Create</button>

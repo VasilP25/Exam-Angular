@@ -1,0 +1,91 @@
+.all-training-card {
+  background: #f6f6f6;
+  max-width: 700px;
+  max-height: 164px;
+  position: relative;
+  display: inline-flex;
+  margin-left:20px;
+  border-radius: 3px;
+  border: 1px solid #aaaa;
+  padding-top: 2px;
+  margin-bottom: 1.6em;
+  border-radius: 30px;
+}
+
+.all-training-card-content {
+  padding: 14px;
+  margin-top: 3%;
+}
+
+.all-training-card-buttons {
+  padding: 45px 15px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.all-training-card-buttons > a {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+  margin-top: 1em;
+  padding: 7px;
+  background: black;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+.all-training-card-buttons > a:hover {
+  background: #c8d20f;
+
+  box-shadow: 0px 0px 5px 0px #9dacf7;
+  color: rgb(0, 0, 0);
+}
+
+.btn-positions {
+  margin-top: 0.4em;
+  background-color: #c8d20f;
+  color: #000000;
+  cursor: pointer;
+}
+
+.all-training-card-buttons > .btn-positions {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+  padding: 7px;
+  background: rgb(60, 32, 100);
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+.container {
+    /* margin-left: auto;
+  margin-right: auto; */
+  width: 100%; /* Трябва да има фиксирана ширина */
+}
+a {
+  padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: rgb(5, 5, 5);
+    cursor: pointer;
+    background-color: #959494;
+    width: 100%;
+    font-size: 16px;
+  transition: all .3s;
+
+    background-color: #c8d20f;
+  color: black;
+  cursor: pointer;
+
+}

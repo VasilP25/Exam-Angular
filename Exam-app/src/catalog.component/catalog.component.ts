@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TrainingType } from '../../types/training';
-import { TrainingService } from '../training.service';
 import { SingleTrainingComponent } from '../single.training.component/single.training.component';
+import { TrainingService } from '../app/training.service';
+import { TrainingType } from '../types/training';
 
 @Component({
   selector: 'app-catalog.component',

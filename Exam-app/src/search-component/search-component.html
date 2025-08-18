@@ -1,0 +1,16 @@
+<div class="search-container">
+  <label>Choose type:</label>
+  <select [(ngModel)]="selectedOption" (change)="filterItems()">
+    <Option value="" disabled selected>Choose type</Option>
+    <Option value="cardio">Cardio</Option>
+    <Option value="strength">Strength</Option>
+  </select>
+</div>
+<div class="container">
+  @for (training of trainings; track $index) {
+
+  <app-single-training-component
+    [training]="training"
+  ></app-single-training-component>
+  }
+</div>

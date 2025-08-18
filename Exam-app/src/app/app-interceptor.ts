@@ -3,7 +3,7 @@ import { envirmonets } from './envirmonets';
 import { inject } from '@angular/core';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
-import { ErrorMessageService } from './error-message.component/error-message.service';
+import { ErrorMessageService } from '../error-message.component/error-message.service';
 
 const { apiUrl } = envirmonets;
 

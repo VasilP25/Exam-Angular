@@ -34,7 +34,7 @@ hr {
   margin-bottom: 25px;
 }
 
-.registerbtn {
+/* .registerbtn {
   background-color: #04AA6D;
   color: white;
   padding: 16px 20px;
@@ -43,11 +43,11 @@ hr {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-}
+} */
 
-.registerbtn:hover {
+/* .registerbtn:hover {
   opacity:1;
-}
+} */
 
 
 .signin {
@@ -77,8 +77,8 @@ hr {
 
 }
 .registerbtn:hover {
-    background-color: rgb(109, 109, 109);
-  color: #c8d20f;
+    background-color: #c8d20f;
+  color: #000000;
   cursor: pointer;
 }
 

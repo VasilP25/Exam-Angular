@@ -3,4 +3,6 @@ export interface TrainingType {
   typeTraining: string;
   description: string;
   timeToComplete: Number;
+  owner: string;
+  _id: string;
 }

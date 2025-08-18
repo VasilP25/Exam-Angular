@@ -1,0 +1,59 @@
+/* not-found.component.css */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  height: auto;
+    background-color: #7979797b; /* тук избираш желания цвят */
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.not-found-container h1 {
+  font-size: 8rem;
+  margin: 0;
+    color: #c8d20f;
+
+}
+
+.not-found-container h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.not-found-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.not-found-container .btn {
+  padding: 12px 24px;
+    color: #000000;
+
+    background-color: #7979797b; /* тук избираш желания цвят */
+
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.not-found-container .btn:hover {
+    color: #000000;
+    background-color: #c8d20f;
+
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+      background-color: #7979797b; /* тук избираш желания цвят */
+
+    flex-direction: column;
+    margin: 0;
+}

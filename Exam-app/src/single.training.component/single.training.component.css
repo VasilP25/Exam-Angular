@@ -89,3 +89,10 @@ a {
   cursor: pointer;
 
 }
+h2 {
+  display: inline-block;
+  max-width: 5ch; /* 10 символа */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

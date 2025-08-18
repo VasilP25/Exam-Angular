@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { TrainingService } from '../training.service';
 import { Router } from '@angular/router';
-
+import { UserForAuth } from '../types/user';
+import { TrainingService } from '../app/training.service';
+import { UserService } from '../user/user.service';
 @Component({
   selector: 'app-create.component',
   imports: [FormsModule],
@@ -10,9 +11,16 @@ import { Router } from '@angular/router';
   styleUrl: './create.component.css',
 })
 export class CreateComponent {
-  constructor(private service: TrainingService, private router: Router) {}
+  user: UserForAuth | null = null;
+  constructor(
+    private service: TrainingService,
+    private router: Router,
+    private userservice: UserService
+  ) {}
 
   create(form: NgForm) {
+    this.user = this.userservice.userId;
+
     const { title, typeTraining, description, timeToComplete } = form.value;
     this.service
       .create(title, typeTraining, description, timeToComplete)

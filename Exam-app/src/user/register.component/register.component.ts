@@ -2,12 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { UserForAuth } from '../../../types/user';
 import { UserService } from '../user.service';
 
 @Component({
   standalone: true,
-  selector: 'app-register.component',
+  selector: 'app-register-component',
   imports: [RouterLink, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',

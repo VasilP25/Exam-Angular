@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TrainingType } from '../../types/training';
+import { RouterLink } from '@angular/router';
+import { TrainingType } from '../types/training';
 
 @Component({
   selector: 'app-single-training-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './single.training.component.html',
   styleUrl: './single.training.component.css',
   standalone: true,
@@ -14,6 +15,8 @@ export class SingleTrainingComponent implements OnInit {
     typeTraining: '',
     description: '',
     timeToComplete: 0,
+    owner: '',
+    _id: '',
   };
 
   constructor() {}

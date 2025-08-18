@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
-import { UserForAuth } from '../../types/user';
 import { HttpClient } from '@angular/common/http';
+import { UserForAuth } from '../types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +14,10 @@ export class UserService {
   user: UserForAuth | null = null;
   get isLogged(): boolean {
     return !!this.user;
+  }
+
+  get userId(): UserForAuth {
+    return this.user!;
   }
   constructor(private http: HttpClient) {
     this.user$.subscribe((user) => {
@@ -46,5 +50,8 @@ export class UserService {
     return this.http
       .post<UserForAuth>('/api/login', { email, password })
       .pipe(tap((user) => this.user$$.next(user)));
+  }
+  getUser() {
+    return this.http.get<UserForAuth>('/api/users/profile');
   }
 }

@@ -17,6 +17,7 @@ export class SingleTrainingComponent implements OnInit {
     timeToComplete: 0,
     owner: '',
     _id: '',
+    subscribers: [],
   };
 
   constructor() {}

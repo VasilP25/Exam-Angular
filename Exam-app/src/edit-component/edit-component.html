@@ -1,5 +1,5 @@
 <div class="centering">
-  <form #form="ngForm" (ngSubmit)="create(form)">
+  <form #form="ngForm" (ngSubmit)="edit(form)">
     <div class="container">
       <h1>Create training</h1>
       <hr />
@@ -14,6 +14,7 @@
         ngModel
         #inputTitle="ngModel"
         minlength="6"
+        value="{{ training[0].title }}"
       />
       @if(inputTitle.touched){ @if(inputTitle.errors?.['required']){
       <p class="error">Title is required.</p>
@@ -29,10 +30,21 @@
         ngModel
         #inputtype="ngModel"
         required
+        [value]="training[0].typeTraining"
       >
         <option value=""></option>
-        <option value="cardio">Cardio</option>
-        <option value="strength">Strength</option>
+        <option
+          value="cardio"
+          [selected]="training[0].typeTraining === 'cardio'"
+        >
+          Cardio
+        </option>
+        <option
+          value="strength"
+          [selected]="training[0].typeTraining === 'strength'"
+        >
+          Strength
+        </option>
       </select>
       @if(inputtype.touched){ @if(inputtype.errors?.['required']){
       <p class="error">Type is required.</p>
@@ -49,6 +61,7 @@
         #inputDescription="ngModel"
         minlength="10"
         maxlength="100"
+        [value]="training[0].description"
       ></textarea>
       @if(inputDescription.touched){ @if(inputDescription.errors?.['required']){
       <p class="error">Description is required.</p>
@@ -70,6 +83,7 @@
         ngModel
         #inputTimeToComplete="ngModel"
         min="1"
+        value="{{ training[0].timeToComplete }}"
       />
       @if(inputTimeToComplete.touched){
       @if(inputTimeToComplete.errors?.['required']){
@@ -80,7 +94,7 @@
       } }
       <hr />
       <button type="submit" class="registerbtn" [disabled]="form.invalid">
-        Create
+        Edit
       </button>
     </div>
   </form>

@@ -5,4 +5,5 @@ export interface TrainingType {
   timeToComplete: Number;
   owner: string;
   _id: string;
+  subscribers: string[];
 }

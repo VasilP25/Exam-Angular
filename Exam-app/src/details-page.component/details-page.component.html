@@ -6,15 +6,28 @@
     <span class="type">{{ training[0].typeTraining }}</span>
     }
   </div>
+  @if(training[0]){
   <div class="card-body">
-    @if(training[0]){
-
     <h3>Описание</h3>
     <p>{{ training[0].description }}</p>
-    }
   </div>
+  <div class="card-body">
+    <h3>Likes: {{ training[0].subscribers.length }}</h3>
+  </div>
+  @if(training[0].owner === user._id){
   <div class="card-footer">
-    <button class="btn edit">Edit</button>
-    <button class="btn delete">Delete</button>
+    <a class="btn edit" [routerLink]="['/edit', training[0]._id]">Edit</a>
+    <a class="btn delete" (click)="deletetraining(training[0]._id)">Delete</a>
   </div>
+  }@else {@if(user && !training[0].subscribers.includes(user._id)){
+  <div class="card-footer">
+    <a class="btn edit" (click)="likeTraining(training[0]._id)">Like</a>
+  </div>
+  }@else {
+  <div class="card-footer">
+    <div class="card-body">
+      <h3>Thank you for your Like!</h3>
+    </div>
+  </div>
+  } }}
 </div>

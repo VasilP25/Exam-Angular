@@ -57,6 +57,7 @@ a:hover{
   overflow: hidden;
   font-family: Arial, sans-serif;
   transition: transform 0.2s ease-in-out;
+  height: auto;
 }
 
 .card:hover {
@@ -79,7 +80,7 @@ a:hover{
 }
 
 .card-header .type {
-  background: #017327;
+  background: #014d1a;
   color: white;
   padding: 4px 10px;
   border-radius: 8px;

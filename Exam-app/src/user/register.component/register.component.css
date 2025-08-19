@@ -34,22 +34,6 @@ hr {
   margin-bottom: 25px;
 }
 
-/* .registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-} */
-
-/* .registerbtn:hover {
-  opacity:1;
-} */
-
-
 .signin {
   background-color: #f1f1f1;
   text-align: center;
@@ -80,6 +64,19 @@ hr {
     background-color: #c8d20f;
   color: #000000;
   cursor: pointer;
+}
+
+p.error {
+    text-align: left;
+    border-radius: 0.5em;
+    color: red !important;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 

@@ -1,0 +1,43 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #7979797b; /* тук избираш желания цвят */
+
+  /* padding: 10px; */
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-card h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.about-card h3 {
+  margin-top: 20px;
+  color: #34495e;
+}
+
+.about-card p {
+  margin-top: 10px;
+  color: #555555;
+  line-height: 1.6;
+}
+
+.about-card a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.about-card a:hover {
+  text-decoration: underline;
+}

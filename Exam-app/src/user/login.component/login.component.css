@@ -77,3 +77,15 @@ button:hover {
   height: 60vh;           /* височината на прозореца */
   margin: 0;
 }
+p.error {
+    text-align: left;
+    border-radius: 0.5em;
+    color: red !important;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+button:disabled {
+  cursor: crosshair;
+  opacity: 0.6;
+}

@@ -14,7 +14,19 @@
         ngModel
         #inputEmail="ngModel"
         required
+        minlength="3"
+        pattern="^[A-Za-z0-9\-\.]+@[A-Za-z\-]+.[a-z]+$"
       />
+      @if(inputEmail.touched){ @if(inputEmail.errors?.['required']){
+
+      <p class="error">Email is required!</p>
+      } @if (inputEmail.errors?.['minlength']) {
+      <p class="error">Email must be at least 3 characters!</p>
+
+      } @if(inputEmail.errors?.['pattern']){
+      <p class="error">Email must be like: example@example.com</p>
+
+      }}
 
       <label for="username"><b>Username</b></label>
       <input
@@ -25,18 +37,38 @@
         required
         ngModel
         #inputUsername="ngModel"
+        minlength="5"
       />
+      @if(inputUsername.touched){ @if(inputUsername.errors?.['required']){
+
+      <p class="error">Username is required!</p>
+      } @if (inputUsername.errors?.['minlength']) {
+      <p class="error">Username must be at least 5 characters!</p>
+
+      }}
 
       <label for="psw"><b>Password</b></label>
       <input
         type="password"
         placeholder="Enter Password"
         name="password"
-        id="psw"
+        id="password"
         required
         ngModel
         #inputPassword="ngModel"
+        minlength="7"
+        pattern="^[A-Za-z0-9]$"
       />
+      @if(inputPassword.touched){ @if(inputPassword.errors?.['required']){
+
+      <p class="error">Password is required!</p>
+      } @if (inputPassword.errors?.['minlength']) {
+      <p class="error">Password must be at least 7 characters!</p>
+
+      }@if(inputPassword.errors?.['pattern']){
+      <p class="error">Password must be only alphabetical characters!</p>
+
+      }}
 
       <label for="repeatPassword"><b>Repeat Password</b></label>
       <input
@@ -47,9 +79,26 @@
         required
         ngModel
         #inputrepeatPassword="ngModel"
+        minlength="7"
       />
+      @if(inputrepeatPassword.touched){
+      @if(inputrepeatPassword.errors?.['required']){
+
+      <p class="error">Repeat password is required!</p>
+      } @if (inputrepeatPassword.errors?.['minlength'] &&
+      !inputrepeatPassword.errors?.['required']) {
+      <p class="error">Repeat password must be at least 7 characters!</p>
+
+      } @if(inputPassword!==inputrepeatPassword &&
+      !inputrepeatPassword.errors?.['minlength'] &&
+      !inputrepeatPassword.errors?.['required']){
+      <p class="error">Passwords mismatch!</p>
+
+      }}
       <hr />
-      <button type="submit" class="registerbtn">Register</button>
+      <button type="submit" class="registerbtn" [disabled]="form.invalid">
+        Register
+      </button>
       <div>
         <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
       </div>

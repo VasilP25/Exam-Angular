@@ -3,6 +3,7 @@ import { SingleTrainingComponent } from '../single.training.component/single.tra
 import { FormsModule } from '@angular/forms';
 import { TrainingType } from '../types/training';
 import { TrainingService } from '../app/training.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-search-component',
@@ -13,6 +14,7 @@ import { TrainingService } from '../app/training.service';
 })
 export class SearchComponent implements OnInit {
   selectedOption: string = '';
+  searchText: string = '';
   trainings: TrainingType[] = [];
   constructor(private service: TrainingService) {}
 
@@ -22,10 +24,19 @@ export class SearchComponent implements OnInit {
     });
   }
   filterItems() {
-    this.service.getAll().subscribe((data) => {
-      this.trainings = data.filter(
-        (training) => training.typeTraining === this.selectedOption
-      );
-    });
+    this.service
+      .getAll()
+      .pipe(
+        map((data) =>
+          data.filter(
+            (training) =>
+              training.typeTraining === this.selectedOption &&
+              training.title.includes(this.searchText)
+          )
+        )
+      )
+      .subscribe((data) => {
+        this.trainings = data;
+      });
   }
 }

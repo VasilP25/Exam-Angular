@@ -34,7 +34,6 @@ export class DetailsPageComponent implements OnInit {
         });
       }
     });
-    this.userservice.getUser().subscribe((data) => {});
   }
   deletetraining(trainingId: string) {
     this.service.delete(trainingId).subscribe(() => {

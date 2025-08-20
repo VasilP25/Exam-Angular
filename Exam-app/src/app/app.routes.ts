@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found.component/not-found.component';
 import { isAuthForCreate, isAuthForLoginRegsiter } from '../guards';
 import { AboutComponent } from '../about.component/about.component';
 import { EditComponent } from '../edit-component/edit-component';
+import { canActivateLogged, canActivateNotLogged } from '../canActivate';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,30 +20,36 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [isAuthForLoginRegsiter],
+    canActivate: [canActivateNotLogged],
   },
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [isAuthForLoginRegsiter],
+    canActivate: [canActivateNotLogged],
   },
   {
     path: 'create',
     component: CreateComponent,
-    canActivate: [isAuthForCreate],
+    canActivate: [canActivateLogged],
   },
   {
     path: 'catalog',
     component: CatalogComponent,
+    canActivate: [canActivateLogged],
   },
   {
     path: 'mytrainings',
     component: MyTrainingsComponent,
+    canActivate: [canActivateLogged],
   },
   { path: 'search', component: SearchComponent },
   { path: 'about', component: AboutComponent },
   { path: 'details/:trainingId', component: DetailsPageComponent },
-  { path: 'edit/:trainingId', component: EditComponent },
+  {
+    path: 'edit/:trainingId',
+    component: EditComponent,
+    canActivate: [canActivateLogged],
+  },
 
   { path: '**', component: NotFoundComponent },
 ];

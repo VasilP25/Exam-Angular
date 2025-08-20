@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../user.service';
+import { ErrorMessageService } from '../../error-message.component/error-message.service';
 
 @Component({
   standalone: true,
@@ -11,8 +12,13 @@ import { UserService } from '../user.service';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
-export class RegisterComponent {
-  constructor(private userservice: UserService, private router: Router) {}
+export class RegisterComponent implements OnInit {
+  msg: string = '';
+  constructor(
+    private userservice: UserService,
+    private router: Router,
+    private error: ErrorMessageService
+  ) {}
   register(form: NgForm) {
     const { username, email, password, repeatPassword } = form.value;
 
@@ -21,5 +27,17 @@ export class RegisterComponent {
       .subscribe((data) => {
         this.router.navigate(['/']);
       });
+  }
+
+  ngOnInit(): void {
+    this.error.apiError$.subscribe((error: any) => {
+      console.log(error.error.message);
+
+      if (error) {
+        this.msg = error.error.message;
+      } else {
+        this.msg = '';
+      }
+    });
   }
 }

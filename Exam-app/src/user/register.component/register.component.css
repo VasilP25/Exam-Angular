@@ -79,5 +79,13 @@ button:disabled {
   opacity: 0.6;
 }
 
+.error-message{
+  position:absolute;
+  right:100px;
+  color:red;
+  font-size: 20px;
+  
+}
+
 
 

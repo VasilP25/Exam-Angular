@@ -31,3 +31,63 @@ select {
   margin-top: 20px;
   
 }
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-container select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.empty-catalog {
+  text-align: center;
+  margin: 100px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  color: #555;
+}
+
+.empty-catalog .empty-icon {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.empty-catalog h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.empty-catalog p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.empty-catalog button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.empty-catalog button:hover {
+  background-color: #0056b3;
+}

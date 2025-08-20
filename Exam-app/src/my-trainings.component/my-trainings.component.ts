@@ -4,6 +4,7 @@ import { TrainingType } from '../types/training';
 import { UserForAuth } from '../types/user';
 import { TrainingService } from '../app/training.service';
 import { UserService } from '../user/user.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-my-trainings-component',
@@ -22,10 +23,15 @@ export class MyTrainingsComponent {
   ngOnInit(): void {
     this.user = this.userservice.userId;
 
-    this.service.getAll().subscribe((data) => {
-      this.trainings = data.filter(
-        (training) => this.user._id == training.owner
-      );
-    });
+    this.service
+      .getAll()
+      .pipe(
+        map((data) =>
+          data.filter((training) => this.user._id == training.owner)
+        )
+      )
+      .subscribe((data) => {
+        this.trainings = data;
+      });
   }
 }

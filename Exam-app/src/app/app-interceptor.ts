@@ -20,14 +20,20 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
   return next(req).pipe(
     catchError((err) => {
-      if (err.status === 401) {
-        //
-        router.navigate(['/home']);
-      } else {
-        //
-        errorMsgService.setError(err);
-        router.navigate(['/error']);
+      //
+      console.log(err);
+      if (err.url.includes('/login')) {
+        router.navigate(['/login']);
       }
+      if (err.url.includes('/register')) {
+        router.navigate(['/register']);
+      }
+      if (err.url.includes('/create')) {
+        router.navigate(['/create']);
+      }
+
+      errorMsgService.setError(err);
+
       return [err];
     })
   );

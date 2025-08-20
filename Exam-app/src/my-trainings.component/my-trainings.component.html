@@ -1,7 +1,14 @@
 <div class="container">
-  @for (training of trainings; track $index) {
+  @if(trainings.length!==0) { @for (training of trainings; track $index) {
   <app-single-training-component
     [training]="training"
   ></app-single-training-component>
+
+  } }@else {
+  <div class="empty-catalog">
+    <h3>Каталогът е празен</h3>
+
+    <a routerLink="/create" class="btn">Добави</a>
+  </div>
   }
 </div>

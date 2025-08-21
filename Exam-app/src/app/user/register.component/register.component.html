@@ -1,0 +1,113 @@
+<div class="centering">
+  <form #form="ngForm" (ngSubmit)="register(form)">
+    <div class="container">
+      @if (msg) {
+
+      <p class="error-message">{{ msg }}</p>
+
+      }
+
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr />
+
+      <label for="email"><b>Email</b></label>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        name="email"
+        id="email"
+        ngModel
+        #inputEmail="ngModel"
+        required
+        minlength="3"
+        pattern="^[A-Za-z0-9\-\.]+@[A-Za-z\-]+\.[a-z]+$"
+      />
+      @if(inputEmail.touched){ @if(inputEmail.errors?.['required']){
+
+      <p class="error">Email is required!</p>
+      } @if (inputEmail.errors?.['minlength']) {
+      <p class="error">Email must be at least 3 characters!</p>
+
+      } @if(inputEmail.errors?.['pattern']){
+      <p class="error">Email must be like: example@example.com</p>
+
+      }}
+
+      <label for="username"><b>Username</b></label>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+        id="username"
+        required
+        ngModel
+        #inputUsername="ngModel"
+        minlength="5"
+      />
+      @if(inputUsername.touched){ @if(inputUsername.errors?.['required']){
+
+      <p class="error">Username is required!</p>
+      } @if (inputUsername.errors?.['minlength']) {
+      <p class="error">Username must be at least 5 characters!</p>
+
+      }}
+
+      <label for="password"><b>Password</b></label>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        id="password"
+        required
+        ngModel
+        #inputPassword="ngModel"
+        minlength="7"
+        pattern="^[A-Za-z0-9]+$"
+      />
+      @if(inputPassword.touched){ @if(inputPassword.errors?.['required']){
+
+      <p class="error">Password is required!</p>
+      } @if (inputPassword.errors?.['minlength']) {
+      <p class="error">Password must be at least 7 characters!</p>
+
+      }@if(inputPassword.errors?.['pattern']){
+      <p class="error">Password must be only alphabetical characters!</p>
+
+      }}
+
+      <label for="repeatPassword"><b>Repeat Password</b></label>
+      <input
+        type="password"
+        placeholder="Repeat Password"
+        name="repeatPassword"
+        id="repeatPassword"
+        required
+        ngModel
+        #inputrepeatPassword="ngModel"
+        minlength="7"
+      />
+      @if(inputrepeatPassword.touched){
+      @if(inputrepeatPassword.errors?.['required']){
+
+      <p class="error">Repeat password is required!</p>
+      } @if (inputrepeatPassword.errors?.['minlength'] &&
+      !inputrepeatPassword.errors?.['required']) {
+      <p class="error">Repeat password must be at least 7 characters!</p>
+
+      } @if(inputPassword!=inputrepeatPassword &&
+      !inputrepeatPassword.errors?.['minlength'] &&
+      !inputrepeatPassword.errors?.['required']){
+      <p class="error">Passwords mismatch!</p>
+
+      }}
+      <hr />
+      <button type="submit" class="registerbtn" [disabled]="form.invalid">
+        Register
+      </button>
+      <div>
+        <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
+      </div>
+    </div>
+  </form>
+</div>

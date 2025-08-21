@@ -1,0 +1,89 @@
+<div class="centering">
+  <p class="error-message">{{ msg }}</p>
+
+  <form #form="ngForm" (ngSubmit)="create(form)">
+    <div class="container">
+      <h1>Create training</h1>
+      <hr />
+
+      <label for="title"><b>Title</b></label>
+      <input
+        id="title"
+        type="text"
+        placeholder="Enter Title"
+        name="title"
+        required
+        ngModel
+        #inputTitle="ngModel"
+        minlength="6"
+      />
+      @if(inputTitle.touched){ @if(inputTitle.errors?.['required']){
+      <p class="error">Title is required.</p>
+      } } @if(inputTitle.touched){ @if(inputTitle.errors?.['minlength']){
+      <p class="error">Title must be at least 6 characters long.</p>
+      } }
+
+      <label for="typeTraining"><b>Type</b></label>
+      <select
+        name="typeTraining"
+        id="typeTraining"
+        required
+        ngModel
+        #inputtype="ngModel"
+        required
+      >
+        <option value=""></option>
+        <option value="cardio">Cardio</option>
+        <option value="strength">Strength</option>
+      </select>
+      @if(inputtype.touched){ @if(inputtype.errors?.['required']){
+      <p class="error">Type is required.</p>
+      } }
+
+      <label for="description"><b>Description</b></label>
+      <textarea
+        type="text"
+        placeholder="Enter Description"
+        name="description"
+        id="description"
+        required
+        ngModel
+        #inputDescription="ngModel"
+        minlength="10"
+        maxlength="100"
+      ></textarea>
+      @if(inputDescription.touched){ @if(inputDescription.errors?.['required']){
+      <p class="error">Description is required.</p>
+      } } @if(inputDescription.touched){
+      @if(inputDescription.errors?.['minlength']){
+      <p class="error">Description must be at least 10 characters long.</p>
+      } } @if(inputDescription.touched){
+      @if(inputDescription.errors?.['maxlength']){
+      <p class="error">Description must be most 100 characters long.</p>
+      } }
+
+      <label for="timeToComplete"><b>Time to complete[min]</b></label>
+      <input
+        type="number"
+        placeholder="Time to complete"
+        name="timeToComplete"
+        id="timeToComplete"
+        required
+        ngModel
+        #inputTimeToComplete="ngModel"
+        min="1"
+      />
+      @if(inputTimeToComplete.touched){
+      @if(inputTimeToComplete.errors?.['required']){
+      <p class="error">Time to complete is required.</p>
+      } } @if(inputTimeToComplete.touched){
+      @if(inputTimeToComplete.errors?.['min']){
+      <p class="error">Time to complete must be greater than 0.</p>
+      } }
+      <hr />
+      <button type="submit" class="registerbtn" [disabled]="form.invalid">
+        Create
+      </button>
+    </div>
+  </form>
+</div>
